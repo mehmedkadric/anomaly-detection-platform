@@ -1,4 +1,4 @@
-# Anomaly Detection Platform
+# Anomaly Detection Learning Platform
 
 ## About
 Generate fake data (Bookstore transactions), analyze it and finally compare different anomaly detection algorithms. The following algorithms are used:
