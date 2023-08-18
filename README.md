@@ -1,7 +1,12 @@
 # Anomaly Detection Platform
 
 ## About
-Generate fake data (Bookstore transactions), analyze it and finally compare different anomaly detection algorithms.
+Generate fake data (Bookstore transactions), analyze it and finally compare different anomaly detection algorithms. The following algorithms are used:
+- Isolation Forest
+- Gaussian Mixture
+- One-Class SVM
+
+It's worth noting that the choice of algorithm and its parameter settings should depend on the specific characteristics and requirements of the dataset and the anomaly detection task at hand. Experimenting with different algorithms and tuning their parameters can help fine-tune the anomaly detection process for optimal results.
 
 ## App Design
 <img width="1899" alt="Screenshot 2023-07-21 at 22 52 07" src="https://github.com/mehmedkadric/anomaly-detection-platform/assets/17452349/b70e6252-91bd-4e60-a677-54b7f3a8a706">
