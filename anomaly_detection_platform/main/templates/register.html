@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="valign-wrapper" style="height: 100vh;">
+  <div class="container">
+    <div class="row">
+      <div class="col offset-s3 s6">
+        <a href="/register"><h5 class="center-align">Register</h5></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col offset-s3 s6">
+        <form method="POST">
+          {% csrf_token %}
+          <div class="input-field">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+          </div>
+          <div class="input-field">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+          </div>
+          <div class="input-field">
+            {{ form.date_of_birth.label_tag }}
+            {{ form.date_of_birth }}
+          </div>
+          <div class="input-field">
+            {{ form.password1.label_tag }}
+            {{ form.password1 }}
+          </div>
+          <div class="input-field">
+            {{ form.password2.label_tag }}
+            {{ form.password2 }}
+          </div>
+
+          <div class="center-align">
+            <button class="btn blue" type="submit">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="center-align">If you already have an account, <a href="/login"><strong>login</strong></a> instead.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

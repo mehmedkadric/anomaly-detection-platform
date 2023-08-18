@@ -1,0 +1,68 @@
+{% extends "index.html" %}
+
+{% block content %}
+  <div class="container">
+    <h2 class="blue-text center-align"><a href="/generate-fake-data">Generate Fake Data</a></h2>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="row">
+        <div class="input-field col s2">
+          {{ form.time_mean.label_tag }}
+          {{ form.time_mean }}
+        </div>
+        <div class="input-field col s2">
+          {{ form.time_std.label_tag }}
+          {{ form.time_std }}
+        </div>
+        <div class="input-field col s2">
+          {{ form.price_mean.label_tag }}
+          {{ form.price_mean }}
+        </div>
+        <div class="input-field col s2">
+          {{ form.price_std.label_tag }}
+          {{ form.price_std }}
+        </div>
+        <div class="input-field col s2">
+          {{ form.pages_mean.label_tag }}
+          {{ form.pages_mean }}
+        </div>
+        <div class="input-field col s2">
+          {{ form.pages_std.label_tag }}
+          {{ form.pages_std }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s3">
+          {{ form.num_records.label_tag }}
+          {{ form.num_records }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="left-align">
+          <button type="submit" class="btn blue">Generate</button>
+        </div>
+      </div>
+
+    </form>
+
+    {% if page_obj %}
+      {% include 'includes/generated_data.html' %}
+    {% endif %}
+  </div>
+
+{% endblock %}
+
+{% block javascript %}
+<script>
+$('#table').DataTable({
+  responsive: true,
+  "order": [
+    [1, "desc"]
+  ],
+  searching: true,
+  paging: false,
+  info: false,
+});
+</script>
+{% endblock %}
+

@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="valign-wrapper" style="height: 80vh;">
+  <div class="container center-align">
+    <div class="row">
+      <div class="col offset-s3 s6">
+        <h3 class="left-align blue-text"><i class="material-icons">account_circle</i> User: {{user.username}}</h3>
+        <div class="col s12 m6 l4">
+            <table>
+                <tbody>
+                <tr>
+                    <td><i>Username</i></td>
+                    <td>{{user.username}}</td>
+                </tr>
+                <tr>
+                    <td><i>Email</i></td>
+                    <td>{{user.email}}</td>
+                </tr>
+                <tr>
+                    <td><i>Date of Birth</i></td>
+                    <td>{{user.date_of_birth}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+{% endblock %}

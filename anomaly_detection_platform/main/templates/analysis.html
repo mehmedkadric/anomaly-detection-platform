@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="center-align blue-text">Analyze the Data</h2>
+    {% include 'includes/generated_data.html' %}
+    <hr>
+    <div class="container">
+        <h4 class="center-align">Time analysis</h4>
+        <div class="row">
+            {{time_analysis}}
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <h4 class="center-align">Genre analysis</h4>
+        <div class="row">
+            {{genre_analysis}}
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <h4 class="center-align">Price analysis</h4>
+        <div class="row">
+            {{price_analysis}}
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <h4 class="center-align">Pages analysis</h4>
+        <div class="row">
+            {{pages_analysis}}
+        </div>
+    </div>
+    <hr>
+
+
+
+
+    </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script>
+$('#table').DataTable({
+  responsive: true,
+  "order": [
+    [1, "desc"]
+  ],
+  searching: true,
+  paging: false,
+  info: false,
+});
+</script>
+{% endblock %}
+

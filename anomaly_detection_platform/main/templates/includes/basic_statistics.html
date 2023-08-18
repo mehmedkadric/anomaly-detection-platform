@@ -1,0 +1,34 @@
+{% for stats in basic_statistics %}
+<tr>
+  <td class="blue-text">{{forloop.counter}}</td>
+  <td>{{stats.field}}</td>
+  <td>
+      {%for key, value in stats.field_most_common_value.items %}
+          {% if key != 'count' %}
+              {{value}}
+          {% endif %}
+      {%endfor%}
+  </td>
+  <td>
+    {%for key, value in stats.field_most_common_value.items %}
+        {% if key == 'count' %}
+          {{value}}/{{record_count}}
+        {% endif %}
+    {%endfor%}
+  </td>
+  <td>
+    {%for key, value in stats.field_least_common_value.items %}
+        {% if key != 'count' %}
+            {{value}}
+        {% endif %}
+    {%endfor%}
+  </td>
+  <td>
+    {%for key, value in stats.field_least_common_value.items %}
+        {% if key == 'count' %}
+          {{value}}/{{record_count}}
+        {% endif %}
+    {%endfor%}
+  </td>
+</tr>
+{% endfor %}

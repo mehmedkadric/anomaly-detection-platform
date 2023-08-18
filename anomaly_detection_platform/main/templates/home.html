@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+          {% include 'includes/home_logged_in.html' %}
+  {% else %}
+          {% include 'includes/home_not_logged_in.html' %}
+  {% endif %}
+{% endblock %}

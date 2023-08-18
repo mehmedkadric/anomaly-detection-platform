@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="valign-wrapper" style="height: 80vh;">
+  <div class="container">
+    <h1 class="blue-text"><a href="/">Playground</a></h1>
+    <h3 class="blue-text"><a href="/">Bookstore</a></h3>
+    <p>So let's assume for our example that we review books being sold in a store. Let's check if Bookstore transaction is anomalous or not.</p>
+    <form method="post" class="row">
+      {% csrf_token %}
+      {% include 'includes/input_data.html'%}
+      <div class="col s12 center-align">
+        <button class="btn waves-effect waves-light blue" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+    {% if score == -1 %}
+      <h5 class="red-text text-darken-2 center-align">Anomaly detected!</h5>
+    {% endif %}
+    {% if score == 1 %}
+      <h5 class="green-text text-darken-2 center-align">Normal data</h5>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

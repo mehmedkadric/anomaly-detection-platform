@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="valign-wrapper" style="height: 80vh;">
+  <div class="container">
+    <div class="row center-align">
+      <div class="col offset-s3 s6">
+        <a href="/login"><h5>Login</h5></a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 center-align">
+        <form method="POST">
+          {% csrf_token %}
+          <div class="row">
+            <div class="input-field col offset-s3 s6">
+              {{ form.username.label_tag }}
+              {{ form.username }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col offset-s3 s6">
+              {{ form.password.label_tag }}
+              {{ form.password }}
+            </div>
+          </div>
+          <div class="row center-align">
+            <button class="btn blue" type="submit">Login</button>
+          </div>
+        </form>
+        <p class="center-align">If you don't already have an account, <a href="/register"><strong>register</strong></a> for one.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
